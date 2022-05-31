@@ -19,17 +19,17 @@ subtractNumber.addEventListener('click', function () {
   currentNumber--
   switch (true) {
     case currentNumber == -5:
-      totalCount.innerHTML = currentNumber
       text2.classList.add('show')
       subtractNumber.disabled = true
+      totalCount.innerHTML = currentNumber
       break
     case currentNumber < 0:
       totalCount.style.color = 'red'
       break
     case currentNumber < 5:
       addNumber.disabled = false
-      totalCount.innerHTML = currentNumber
       text.classList.remove('show')
+      totalCount.innerHTML = currentNumber
       break
   }
   totalCount.innerHTML = currentNumber
@@ -47,9 +47,9 @@ addNumber.addEventListener('click', function () {
       totalCount.style.color = 'black'
       break
     case currentNumber > -5:
-      totalCount.innerHTML = currentNumber
       text2.classList.remove('show')
       subtractNumber.disabled = false
+      totalCount.innerHTML = currentNumber
       break
   }
   totalCount.innerHTML = currentNumber

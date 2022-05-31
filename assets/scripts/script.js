@@ -17,36 +17,40 @@ totalCount.innerHTML = currentNumber
 // Add click event and function to buttons
 subtractNumber.addEventListener('click', function () {
   currentNumber--
-  if (currentNumber < 0) {
-    totalCount.style.color = 'red'
-  }
-  if (currentNumber == -5) {
-    totalCount.innerHTML = currentNumber
-    text2.classList.add('show')
-    subtractNumber.disabled = true
-  }
-  if (currentNumber < 5) {
-    addNumber.disabled = false
-    totalCount.innerHTML = currentNumber
-    text.classList.remove('show')
+  switch (true) {
+    case currentNumber == -5:
+      totalCount.innerHTML = currentNumber
+      text2.classList.add('show')
+      subtractNumber.disabled = true
+      break
+    case currentNumber < 0:
+      totalCount.style.color = 'red'
+      break
+    case currentNumber < 5:
+      addNumber.disabled = false
+      totalCount.innerHTML = currentNumber
+      text.classList.remove('show')
+      break
   }
   totalCount.innerHTML = currentNumber
 })
 
 addNumber.addEventListener('click', function () {
   currentNumber++
-  if (currentNumber == 5) {
-    totalCount.innerHTML = currentNumber
-    text.classList.add('show')
-    addNumber.disabled = true
-  }
-  if (currentNumber > -5) {
-    totalCount.innerHTML = currentNumber
-    text2.classList.remove('show')
-    subtractNumber.disabled = false
-  }
-  if (currentNumber >= 0) {
-    totalCount.style.color = 'black'
+  switch (true) {
+    case currentNumber == 5:
+      text.classList.add('show')
+      addNumber.disabled = true
+      totalCount.innerHTML = currentNumber
+      break
+    case currentNumber >= 0:
+      totalCount.style.color = 'black'
+      break
+    case currentNumber > -5:
+      totalCount.innerHTML = currentNumber
+      text2.classList.remove('show')
+      subtractNumber.disabled = false
+      break
   }
   totalCount.innerHTML = currentNumber
 })
